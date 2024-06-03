@@ -105,3 +105,11 @@ ssh git -> ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQD6UWd5CTjlLAUnvJqM1cehPONBJY2uG
 utilize o gpt apra fazer ssh git, pelo git bash
 
 conectar via ssh git remote set-url origin git@github.com:LucasCastro100/ideias_dev.git
+
+GIT
+git init
+git add . | ou git add nome_arquivo
+git commit -m "first commit"
+git branch -M main
+git remote add origin git@github.com:LucasCastro100/exemplo-git-formacao.git
+git push -u origin main
