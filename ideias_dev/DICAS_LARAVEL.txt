@@ -1,0 +1,107 @@
+php artisan key:generate = para gerar uma nova chave caso seja necessario
+
+php artisan make:controller e o nome do controller => para criar controllers
+php artisan make:migrate e o nome da migration => para cirar migrations
+
+php artisan migrate => toda vez que eu atualizar uma table ou alguma infomação dentro do alravel
+
+php artisan migrate:fresh => para resetar as migrations
+php artisan migrate:fresh --seed  => aqui reseto o banco de dados e sa insiro os dados junto
+php artisan migrate --path=/caminho/para/arquivo/migracao.php => para rodar a migration individual
+
+php artisan make:seed => automatização de dados para banco de dados e tb para inserção ao banco de dados
+php artisan db:seed => para rodar a seed e cadastrar os dados dentro do banco de dados; para o codigo funcionar eu precido ir dentro dao DatabaseSeed, e inserir a seed que eu quero que rode
+
+php artisan make:model TeamTournament -m => nesse modelo criamos o model no singular e o laravel ja cria a migrate na maneira certa
+php artisan make:controller nomeController --resource => serve para para criar um controle de recursos
+
+composer create-project laravel/laravel example-app => instalalr o alravel
+
+php artisan migrate:rollback => vai deletar apenas a tabela onde houve alterçaão e depois rodo nvamente a migration com alteração
+
+php artisan migrate:rollback --step=2 => por exemplo ele daria dois apssoa para tras no rolback ao invez de fazer o rolback da ultima alçaio da migration
+
+php artisan migrate:status => mostra para nso quantas vezes cada migration foi usada
+
+alter_table_users_add_address_column --table=noemTabela => ele ja cria parametreos em abse a table que vc passou
+
+php artisan tinker => utilizamos apra realizar testes em rotas pelo terminal, aqui posso tulizar dos memsos comandos que realizo no Models, Controlers, e tudo mais porem sempre temno que pasar o caminho Ex use App\Models\Task depois Task::all() eu consigo epgar todos os dados da table tasks pelo terminal
+
+cls => no terminal php ele limpa a tela
+
+php artisan make:factory nomeDaFactory => utilizada apra criar as fabricas de dados para popular o banco de dados
+
+Actions Handled By Resource Controller
+Verb	URI	Action	Route Name
+GET	/photos	index	photos.index
+GET	/photos/create	create	photos.create
+POST	/photos	store	photos.store
+GET	/photos/{photo}	show	photos.show
+GET	/photos/{photo}/edit	edit	photos.edit
+PUT/PATCH	/photos/{photo}	update	photos.update
+DELETE	/photos/{photo}	destroy	photos.destroy
+
+ Route::resource('photos', PhotoController::class)
+->missing(function (Request $request) {
+    return Redirect::route('photos.index');
+});
+
+TIPOS DE CONTROLLERS
+index - inicio
+create - pega os dados do form e envia para o store para inserir no bd
+store - vai receber os dados do create
+show - ver um dado
+edit - vai receber os dados do update
+update - pega os dados do form e envia para o edir para atualizar um dado no bd
+destroy - exclui um item no banco de dados
+
+
+RELACIONAMENTOS
+HAS ONE - 1:1
+BELONGS TO - N:1
+HAS MANY - 1:N
+MANY TO MANY - N:N
+
+--> para criar commands --> php artisan make:command nomeCommand
+
+SE O COMANDS JA ESTIVER CRIADO E CONFIGURADO BASTA USAR
+
+php artisan npm:install
+php artisan compile:assets
+
+PARA UTILIZAR UM CRON
+php artisan schedule:run
+
+PARA LIMPAR TODO O CACHE DO APP
+php artisan optimize:clear
+
+CASO EU MOVA A PASTA PUBLIC DE LUGAR TENHO QUE FAZER ESSE codigo
+php artisan serve --host=127.0.0.1 --port=8000 --public=../public  -> pq ele estara no local
+
+CASO NAO RECONHECE O  --PUBLIC USE
+php -S localhost:8000 -t public
+
+RODAR SCHEDULE
+php artisan schedule:work 
+php artisan schedule:run
+
+DENTRO DO SERVIDOR RODAR (vc precisa estar dentro do diretorio)
+php artisan schedule:run >> /dev/null 2>&1
+
+INSTALAR O WLS NO WINDOWS (TERMINAL DE LINUX)
+wsl --install -> va no temrinal shell e digite esse comando
+
+WSL DADOS
+user: lucas
+pass: lks123018
+
+SSH GIT
+ssh-keygen -t ed25519 -C "your_email@example.com" -> para gerar chave ssh git
+pass sshkey -> lks123018
+sha -> SHA256:eImvzs4+FFc+wQwHaQ6UMTvWZl+lysjDTBQY38kJzC0 lucascastro121295@gmail.com
+
+ssh git -> ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQD6UWd5CTjlLAUnvJqM1cehPONBJY2uGLhAmAIsNd2osFYfq6pEA4GVfy6dqiC4XMsoANcJQymmS6j1laC5GVRBcrxg9WjKfc4hFvZKrOt3zCs4G0uc0VzdyAM3JR+vNZ8GX4E6F10i9i3w7irYO7QBVJ16vV1F/YXPZePglLM1Kf3XyaFUxfqgHBg1AbkDgZ9yC4bGsDRGEFWpVqFnpEmGLV6Gk0kLf+0D7HD6eYbvvFyjyTEmK+XWpCn4WKaCZbJaDrmsQVD7XG5JCuOKo/rJ4yTZw3p5nGPEyuUNcAR0YYdBc9tOQjul0DkuEZxmDZPg6vdmiAac9GvY3hp7pSg31dyPBLFbBX29vTosFObvOiptq37R4xFOA0pmSJNRcQhX7N0Zt1+vzT1kp9+n+hvE8mQKvkAt+Ykct4P9wsMeQqWNu1mzV24L+RckNwYOCwDDaX16jmAmm8kfsssnx0TfGrqOLgfKBXOqZY9KB4nCbegFpklT22kUFChl6N3Koqr5JwB0Z+lPlDWD9a1dIv5os5yZde+40Hz+9lpsihyT11QU3IEC9qiijW/eh8Bb9fsUBTZzOQq90xi8dKpbn0PPubvRtx64FySkTD+SUZBb+pw3X/dOvNR3O2VcLyAL9uf48sdvmN0fRnb0TPnHB9Vaq1MW9R21cO8Gr7oSfVPnIw== lucascastro121295@gmail.com
+
+utilize o gpt apra fazer ssh git, pelo git bash
+
+conectar via ssh git remote set-url origin git@github.com:LucasCastro100/ideias_dev.git

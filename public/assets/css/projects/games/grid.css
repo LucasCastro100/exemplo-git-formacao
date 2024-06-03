@@ -1,0 +1,52 @@
+@import '../../app.css';
+.grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto;
+    gap: 0.75rem;
+    /*grid-auto-flow: column; => aqui ele vai distribuir os items lado a lado de formas iguais*/
+    & div.info-grid {
+        border: solid 2px rgba(0, 0, 0, 1);
+        border-radius: 0.5rem;
+        height: 8rem;
+    }
+    & div.grid1 {
+        background-color: rgba(0, 0, 0, 1);
+    }
+    & div.grid2 {
+        background-color: rgba(255, 0, 0, 1);
+    }
+    & div.grid3 {
+        background-color: rgba(0, 255, 0, 1);
+    }
+    & div.grid4 {
+        background-color: rgba(0, 0, 255, 1);
+    }
+    & div.grid5 {
+        background-color: rgba(255, 255, 0, 1);
+    }
+    & div.grid6 {
+        background-color: rgba(0, 255, 255, 1);
+    }
+    & div.grid7 {
+        background-color: rgba(255, 0, 255, 1);
+    }
+    & div.grid8 {
+        background-color: rgba(255, 255, 255, 1);
+    }
+    & div.grid9 {
+        background-color: rgba(150, 255, 255, 1);
+    }
+    & div.grid10 {
+        background-color: rgba(255, 255, 150, 1);
+    }
+    & div.grid11 {
+        background-color: rgba(255, 150, 255, 1);
+    }
+    & div.grid12 {
+        background-color: rgba(250, 200, 150, 1);
+    }
+    & div.grid13 {
+        background-color: rgba(150, 1, 150, 1);
+    }
+}
